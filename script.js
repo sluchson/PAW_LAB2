@@ -17,15 +17,11 @@
   cw1.addEventListener("click", function() {
     answer.textContent = "Loading...";
 
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
       .then(response => response.json())
       .then(posts => {
-        const htmlPosts = posts.map(post => {
-          return `<li><strong>${post.title}</strong><br>${post.body}</li>`
-        })
-
         setTimeout(() => {
-          answer.innerHTML = `<ul>${htmlPosts.join('')}</ul>`
+          answer.innerHTML = `<h3>${posts.title}</h3><p>${posts.body}</p>`
         }, 1000);
       })
   })
