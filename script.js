@@ -15,16 +15,25 @@
   })
 
   cw1.addEventListener("click", function() {
-    answer.textContent = "Loading...";
+    answer.textContent = "Processing...";
 
-    fetch('https://jsonplaceholder.typicode.com/posts/1')
-      .then(response => response.json())
-      .then(posts => {
-        setTimeout(() => {
-          answer.innerHTML = `<h3>${posts.title}</h3><p>${posts.body}</p>`
-        }, 1000);
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: "Nowy post",
+        body: "Treść nowego posta",
+        userId: 1
       })
-  })
+    })
+      .then(response => response.json())
+      .then(data => {
+        answer.textContent = `Dodano nowy post o ID = ${data.id}`;
+      })
+  });
+
+
+
 
   cw2.addEventListener("click", function() {
     //TODO
