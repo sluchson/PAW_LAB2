@@ -2,3 +2,23 @@ html {
   height: 100%;
   width: 100%;
 }
+
+.post {
+  border: 1px solid #ffae00;
+  padding: 10px;
+  margin: 10px 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+}
+
+.post h3 {
+  margin: 0 0 5px 0;
+  color: #767ad5;
+  font-size: 18px;
+}
+
+.post p {
+  margin: 0;
+  color: #ff0000;
+  font-size: 14px;
+}
