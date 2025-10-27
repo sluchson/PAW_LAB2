@@ -39,6 +39,10 @@
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(posts => {
+        console.log(posts);
+        console.log(posts[0].title);
+        console.log(posts[0].body);
+
         const htmlPosts = posts.map(post => {
           return `
             <div class="post">
@@ -57,6 +61,7 @@
         console.error(error);
       });
   });
+
 
 
   cw3.addEventListener("click", function() {
