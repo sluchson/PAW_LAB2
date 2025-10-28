@@ -7,23 +7,12 @@
 
   function showLoadingPopup() {
     const loadingDiv = document.createElement("div");
-    loadingDiv.id = "loadingPopup";
+    loadingDiv.className = "popup";
     loadingDiv.textContent = "Loading…";
-    loadingDiv.style.position = "fixed";
-    loadingDiv.style.top = 0;
-    loadingDiv.style.left = 0;
-    loadingDiv.style.width = "100%";
-    loadingDiv.style.height = "100%";
-    loadingDiv.style.backgroundColor = "rgba(0,0,0,0.5)";
-    loadingDiv.style.color = "#fff";
-    loadingDiv.style.fontSize = "24px";
-    loadingDiv.style.display = "flex";
-    loadingDiv.style.alignItems = "center";
-    loadingDiv.style.justifyContent = "center";
-    loadingDiv.style.zIndex = 9999;
     document.body.appendChild(loadingDiv);
     return loadingDiv;
   }
+
 
   example.addEventListener("click", function() {
     fetch('https://jsonplaceholder.typicode.com/posts')
